@@ -1,1 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Oxford Hydrogen — Hydrogen Meets High-Value Chemistry. A novel catalytic platform for clean hydrogen and high-value chemical co-products.">
+  <title>Oxford Hydrogen</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="logo.png"> <!-- Optional favicon -->
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-left">
+      <img src="logo.png" alt="Oxford Hydrogen Logo" style="height: 40px;">
+    </div>
+    <div class="nav-right">
+      <a href="#about">About</a>
+      <a href="#technology">Technology</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container fade-up">
+      <h1>Hydrogen Meets High-Value Chemistry</h1>
+      <p>At Oxford Hydrogen, we’re developing a novel catalytic platform that pairs clean hydrogen production with the creation of high-value chemical co-products.</p>
+      <p>By rethinking traditional process economics, we’re opening new pathways for sustainable value — in hydrogen and beyond.</p>
+      <h2>Flexible. Scalable. Game-changing.</h2>
+      <a href="#contact" class="btn">Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="container grid grid-2 fade-up">
+      <div>
+        <h2>About Us</h2>
+        <p>Oxford Hydrogen is pioneering a catalytic process that transforms both the hydrogen economy and high-value specialty chemicals. By combining breakthrough electrochemistry with flexible feedstocks, we address both decarbonisation and value creation in one platform.</p>
+      </div>
+      <div>
+        <h2>Our Vision</h2>
+        <p>We aim to redefine how clean hydrogen integrates into global value chains — not as a standalone commodity, but as a driver of sustainable innovation across multiple industries.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technology Section -->
+  <section id="technology">
+    <div class="container">
+      <h2>Technology Highlights</h2>
+      <div class="grid grid-3 fade-up">
+        <div class="card">
+          <h3>Low Voltage</h3>
+          <p>Operates at significantly lower voltages than traditional electrolysis, reducing energy costs and improving efficiency.</p>
+        </div>
+        <div class="card">
+          <h3>High-Value Co-Products</h3>
+          <p>Generates specialty organosulfonates with applications in pharmaceuticals, advanced materials, and green chemistry markets.</p>
+        </div>
+        <div class="card">
+          <h3>Scalable & Modular</h3>
+          <p>Designed for modular deployment — from laboratory validation to industrial production without re-engineering the process.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container fade-up">
+      <h2>Contact</h2>
+      <p>Interested in partnerships, investment, or learning more? We’d love to hear from you.</p>
+      <a href="mailto:info@oxfordhydrogen.com" class="btn">Email Us</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="text-align:center; padding: var(--space-3); font-size: 0.875rem; color: var(--color-muted);">
+    © <span id="year"></span> Oxford Hydrogen. All rights reserved.
+  </footer>
+
+  <script>
+    // Auto-update year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
 
