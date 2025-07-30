@@ -138,8 +138,15 @@ a:hover::after {
    4. LAYOUT / GRID
 ------------------------------ */
 section {
-  padding: var(--space-7) 0;
+  padding: var(--space-5) 0; /* 3rem by default */
 }
+
+@media (min-width: 1024px) {
+  section {
+    padding: var(--space-6) 0; /* 4rem for desktop */
+  }
+}
+
 
 .grid {
   display: grid;
