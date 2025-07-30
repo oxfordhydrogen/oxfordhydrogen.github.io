@@ -1,18 +1,17 @@
 /* =========================================================
-   Oxford Hydrogen – Premium CSS v2.1
-   Fix: Visibility, Contrast, Hero Readability
+   Oxford Hydrogen – Premium CSS v2.2
+   Fix: Strong hero contrast, gradient tuning, universal readability
 ========================================================= */
 
 /* ------------------------------
    1. ROOT VARIABLES (Light Theme)
 ------------------------------ */
 :root {
-  /* Colors */
   --color-bg: #ffffff;
-  --color-text: #0B0C10;       /* Strong text */
+  --color-text: #0B0C10;       /* Strong dark text */
   --color-accent: #00ADEF;
   --color-accent-dark: #0089b5;
-  --color-muted: #555a60;      /* Secondary text color */
+  --color-muted: #555a60;      /* Secondary muted text */
 
   /* Dark mode overrides */
   --color-bg-dark: #0B0C10;
@@ -20,11 +19,9 @@
   --color-muted-dark: #b0b5ba;
   --color-card-bg-dark: rgba(20, 20, 20, 0.6);
 
-  /* Typography */
   --font-serif: 'Playfair Display', serif;
   --font-sans: 'Inter', system-ui, sans-serif;
 
-  /* Spacing scale */
   --space-1: 0.5rem;
   --space-2: 1rem;
   --space-3: 1.5rem;
@@ -33,21 +30,15 @@
   --space-6: 4rem;
   --space-7: 6rem;
 
-  /* Container width */
   --max-width: 1200px;
 
-  /* Shadows */
   --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.08);
   --shadow-hover: 0 6px 20px rgba(0, 0, 0, 0.15);
 
-  /* Border radius */
   --radius: 12px;
-
-  /* Transitions */
   --transition: all 0.4s ease-out;
 }
 
-/* Dark mode (auto) */
 @media (prefers-color-scheme: dark) {
   :root {
     --color-bg: var(--color-bg-dark);
@@ -58,7 +49,7 @@
 }
 
 /* ------------------------------
-   2. RESET / BASE STYLES
+   2. RESET / BASE
 ------------------------------ */
 *,
 *::before,
@@ -101,7 +92,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-serif);
   line-height: 1.2;
   margin-bottom: var(--space-2);
-  color: var(--color-text); /* Force strong contrast */
+  color: var(--color-text);
   font-weight: 700;
 }
 
@@ -121,7 +112,6 @@ p {
   margin-bottom: var(--space-2);
 }
 
-/* Links */
 a {
   text-decoration: none;
   color: var(--color-accent);
@@ -173,17 +163,18 @@ section {
   place-items: center;
   text-align: center;
   min-height: 100vh;
-  background: linear-gradient(120deg, #d6f2ff, #ffffff);
+  /* Slightly darker blue for contrast */
+  background: linear-gradient(120deg, #c2e6ff, #f9f9f9);
   animation: gradient-shift 12s ease infinite;
   padding: var(--space-6) var(--space-3);
 }
 
+/* Subtle overlay to prevent wash-out */
 .hero::before {
-  /* Optional subtle overlay for readability */
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.2);
   z-index: 0;
 }
 
@@ -192,9 +183,11 @@ section {
   z-index: 1;
 }
 
-/* Hero text overrides */
+/* Hero text always strong contrast */
+.hero h1,
+.hero h2,
 .hero p {
-  color: var(--color-text); /* Strong text in hero */
+  color: #0B0C10 !important;
 }
 
 /* ------------------------------
@@ -220,7 +213,6 @@ nav a {
   font-weight: 500;
 }
 
-/* Dark mode nav */
 @media (prefers-color-scheme: dark) {
   nav {
     background: rgba(20,20,20,0.7);
@@ -278,16 +270,15 @@ nav a {
 }
 
 @keyframes gradient-shift {
-  0% { background: linear-gradient(120deg, #d6f2ff, #ffffff); }
-  50% { background: linear-gradient(120deg, #ffffff, #d6f2ff); }
-  100% { background: linear-gradient(120deg, #d6f2ff, #ffffff); }
+  0% { background: linear-gradient(120deg, #c2e6ff, #f9f9f9); }
+  50% { background: linear-gradient(120deg, #f9f9f9, #c2e6ff); }
+  100% { background: linear-gradient(120deg, #c2e6ff, #f9f9f9); }
 }
 
 .fade-up {
   animation: fade-up 1s ease forwards;
 }
 
-/* Reduce motion */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;
@@ -305,7 +296,7 @@ nav a {
 
   .hero h1 {
     font-size: clamp(2rem, 6vw, 3rem);
-    font-weight: 700; /* Extra weight on mobile */
+    font-weight: 700;
   }
 
   .card {
