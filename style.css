@@ -1,6 +1,6 @@
 /* =========================================================
    Oxford Hydrogen – Premium CSS v2.4
-   Fix: Strong hero contrast + horizontal scroll-shadow + premium scroll feel
+   Fix: Strong hero contrast + horizontal scroll-shadow + premium scroll feel + nav offset
 ========================================================= */
 
 /* ------------------------------
@@ -71,6 +71,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background 0.3s, color 0.3s;
+
+  /* Offset to prevent fixed nav overlap */
+  padding-top: 120px;
 }
 
 img {
@@ -270,17 +273,17 @@ nav a {
   position: relative;
 
   /* Premium scroll feel */
-  -webkit-overflow-scrolling: touch; /* smooth momentum on iOS */
-  scrollbar-width: none; /* hide scrollbar on Firefox */
-  cursor: grab; /* grab cursor for desktop */
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  cursor: grab;
 }
 
 .scroll-shadow:active {
-  cursor: grabbing; /* change cursor while dragging */
+  cursor: grabbing;
 }
 
 .scroll-shadow::-webkit-scrollbar {
-  display: none; /* hide scrollbar on WebKit browsers */
+  display: none;
 }
 
 .scroll-shadow .card {
