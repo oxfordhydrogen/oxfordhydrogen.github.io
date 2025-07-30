@@ -89,7 +89,7 @@ img {
    3. TYPOGRAPHY
 ------------------------------ */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   line-height: 1.2;
   margin-bottom: var(--space-2);
   color: var(--color-text);
