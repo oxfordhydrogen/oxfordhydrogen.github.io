@@ -1,6 +1,6 @@
 /* =========================================================
-   Oxford Hydrogen – Premium CSS v2.3
-   Fix: Strong hero contrast + horizontal scroll-shadow
+   Oxford Hydrogen – Premium CSS v2.4
+   Fix: Strong hero contrast + horizontal scroll-shadow + premium scroll feel
 ========================================================= */
 
 /* ------------------------------
@@ -259,7 +259,7 @@ nav a {
 }
 
 /* ------------------------------
-   9. HORIZONTAL SCROLL SHADOW
+   9. HORIZONTAL SCROLL SHADOW (Premium)
 ------------------------------ */
 .scroll-shadow {
   display: flex;
@@ -268,6 +268,19 @@ nav a {
   padding-bottom: 1rem;
   scroll-snap-type: x mandatory;
   position: relative;
+
+  /* Premium scroll feel */
+  -webkit-overflow-scrolling: touch; /* smooth momentum on iOS */
+  scrollbar-width: none; /* hide scrollbar on Firefox */
+  cursor: grab; /* grab cursor for desktop */
+}
+
+.scroll-shadow:active {
+  cursor: grabbing; /* change cursor while dragging */
+}
+
+.scroll-shadow::-webkit-scrollbar {
+  display: none; /* hide scrollbar on WebKit browsers */
 }
 
 .scroll-shadow .card {
