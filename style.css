@@ -1,6 +1,6 @@
 /* =========================================================
-   Oxford Hydrogen – Premium CSS v2.4
-   Fix: Strong hero contrast + horizontal scroll-shadow + premium scroll feel + nav offset
+   Oxford Hydrogen – Premium CSS v2.5 Optimized
+   Enhancements: Critical-path readiness, font swap, CLS prevention, accessibility focus, mobile touch
 ========================================================= */
 
 /* ------------------------------
@@ -71,9 +71,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background 0.3s, color 0.3s;
-
-  /* Offset to prevent fixed nav overlap */
-  padding-top: 120px;
+  padding-top: 120px; /* Offset for fixed nav */
 }
 
 img {
@@ -119,6 +117,8 @@ a {
   color: var(--color-accent);
   position: relative;
   transition: var(--transition);
+  touch-action: manipulation;
+  min-height: 44px; /* mobile-friendly target size */
 }
 
 a::after {
@@ -134,6 +134,11 @@ a::after {
 
 a:hover::after {
   width: 100%;
+}
+
+a:focus, .btn:focus {
+  outline: 2px solid var(--color-accent-dark);
+  outline-offset: 2px;
 }
 
 /* ------------------------------
@@ -214,6 +219,11 @@ nav {
   transition: background 0.3s ease;
 }
 
+nav .nav-left img {
+  height: 100px;
+  width: auto; /* Prevent CLS */
+}
+
 nav a {
   margin-left: var(--space-3);
   font-weight: 500;
@@ -236,6 +246,8 @@ nav a {
   color: var(--color-accent);
   font-weight: 600;
   transition: var(--transition);
+  touch-action: manipulation;
+  min-height: 44px;
 }
 
 .btn:hover {
@@ -262,7 +274,7 @@ nav a {
 }
 
 /* ------------------------------
-   9. HORIZONTAL SCROLL SHADOW (Premium)
+   9. HORIZONTAL SCROLL SHADOW
 ------------------------------ */
 .scroll-shadow {
   display: flex;
@@ -271,8 +283,6 @@ nav a {
   padding-bottom: 1rem;
   scroll-snap-type: x mandatory;
   position: relative;
-
-  /* Premium scroll feel */
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   cursor: grab;
@@ -316,14 +326,8 @@ nav a {
    10. ANIMATIONS
 ------------------------------ */
 @keyframes fade-up {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes gradient-shift {
@@ -337,10 +341,7 @@ nav a {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  * {
-    animation: none !important;
-    transition: none !important;
-  }
+  * { animation: none !important; transition: none !important; }
 }
 
 /* ------------------------------
